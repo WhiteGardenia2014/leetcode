@@ -28,7 +28,7 @@
 var trailingZeroes = function (n) {
   n = n - n % 5
   let zeros = 0
-  while (n != 0) {
+  while (n) {
     n = Math.trunc(n / 5)
     zeros += n
   }
