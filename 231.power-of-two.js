@@ -9,8 +9,7 @@
  * @param {number} n
  * @return {boolean}
  */
-var isPowerOfTwo = function(n) {
-    
+var isPowerOfTwo = function (n) {
+  return n > 0 && 4294967296 % n == 0
 };
 // @lc code=end
-
