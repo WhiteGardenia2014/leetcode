@@ -17,6 +17,7 @@ var sortedSquares = function (nums) {
   for (let index = nums.length - 1; index >= 0; index--) {
     let leftSqua = nums[left] * nums[left]
     let rightSqua = nums[right] * nums[right]
+
     if (leftSqua <= rightSqua) {
       ans[index] = rightSqua
       right--
