@@ -10,7 +10,8 @@
  * @param {string} b
  * @return {string}
  */
-var addBinary = function (a, b) {
+
+/*var addBinary = function (a, b) {
   let m = a.length
   let n = b.length
   while (m < n) {
@@ -37,7 +38,27 @@ var addBinary = function (a, b) {
     ans = "" + c + ans
   }
   return ans
-};
+};*/
+
+
+var addBinary = function (a, b) {
+  let i = a.length - 1
+  let j = b.length - 1
+  let ans = ""
+  let carry = 0
+  for (; i >= 0 || j >= 0; i--, j--) {
+    let x = a[i] | 0
+    let y = b[j] | 0
+    let s = x + y + carry
+    let z = s & 1
+    carry = s >> 1
+    ans = z + ans
+  }
+  if (carry) {
+    ans = carry + ans
+  }
+  return ans
+}
 // @lc code=end
 
-addBinary("101111", "101010")
+console.log(addBinary("101111", "101010"));
