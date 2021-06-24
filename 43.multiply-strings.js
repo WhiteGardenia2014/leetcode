@@ -10,6 +10,10 @@
  * @param {string} num2
  * @return {string}
  */
+
+//字符串乘法、或大整数乘法
+//这道题还有其他的数学方法，如多项式相乘，卷积等
+
 var multiply = function (num1, num2) {
   if (num1 == "0" || num2 == "0") { //如果有一个乘数为0，直接返回0
     return "0"
