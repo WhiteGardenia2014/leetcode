@@ -9,6 +9,8 @@
  * @param {number[]} nums
  * @return {number}
  */
+
+//从小到大排序数组，计算奇数位的和，即为最大总和
 var arrayPairSum = function (nums) {
   let ans = 0
   nums.sort((a, b) => a - b)
