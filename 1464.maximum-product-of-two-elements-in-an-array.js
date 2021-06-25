@@ -9,6 +9,8 @@
  * @param {number[]} nums
  * @return {number}
  */
+
+//解法同 747 题，寻找数组中第一和第二大的数字
 var maxProduct = function (nums) {
   let first = 0
   let second = 0
