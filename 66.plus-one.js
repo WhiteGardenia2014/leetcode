@@ -10,22 +10,20 @@
  * @return {number[]}
  */
 var plusOne = function (digits) {
-  let n = digits.length
-  if (digits[n - 1] != 9) {
-    digits[n - 1]++
-    return digits
+  for (let i = digits.length - 1; i >= 0; i--) { //从后向前遍历数组
+    if (digits[i] !== 9) { //如果某一位不是9，就将这位加 1 并返回
+      digits[i]++
+      return digits
+    } else {
+      digits[i] = 0 //如果某一位等于9，就把这一位置为 0，并继续检查前一位
+    }
   }
 
-  let i = 1
-  while (i <= n && digits[n - i] == 9) {
-    digits[n - i] = 0
-    i++
-  }
-  if (i != n + 1) {
-    digits[n - i]++
-  } else {
+  if (digits[0] === 0) { //如果循环结束后，第一位为 0，说明原来数组全为9，那么需要在首位添加 1
     digits.unshift(1)
   }
   return digits
 };
 // @lc code=end
+
+console.log(plusOne([0]));
