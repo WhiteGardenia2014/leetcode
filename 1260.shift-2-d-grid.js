@@ -10,21 +10,24 @@
  * @param {number} k
  * @return {number[][]}
  */
+
+//使用了 189 题的方法
+
 var shiftGrid = function (grid, k) {
   let n = grid[0].length
   let arr1 = []
   let arr2 = []
   let ans = []
 
-  for (let value of grid) {
+  for (let value of grid) { //将二维数组转换为一维数组
     arr1.push(...value)
   }
 
-  for (let i = 0; i < arr1.length; i++) {
+  for (let i = 0; i < arr1.length; i++) { //旋转数组
     arr2[(i + k) % arr1.length] = arr1[i]
   }
 
-  for (let i = 0; i < arr1.length;) {
+  for (let i = 0; i < arr1.length;) { //将一维数组拼接为二维数组
     let item = []
     for (let j = 0; j < n; j++) {
       item.push(arr2[i])
