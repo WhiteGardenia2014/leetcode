@@ -11,6 +11,10 @@
  */
 
 //深度搜索
+//如果搜索超过边界，返回 0
+//如果遇到障碍物，返回 0
+//如果搜索能够到达目的地，返回计数 1
+//深度搜索遍历所有的情况，返回能达到目的地的路径总和
 /*var uniquePathsWithObstacles = function (obstacleGrid) {
   let m = obstacleGrid.length
   let n = obstacleGrid[0].length
@@ -32,6 +36,9 @@
 };*/
 
 //动态规划
+//dp数组的含义为，机器人要到达 dp[i][j]位置，一共有多少种走法
+//注意初始化dp数组的时候，要考虑到障碍物的影响
+//如果遇到障碍物，dp数组的值应该置为 0
 var uniquePathsWithObstacles = function (obstacleGrid) {
   let m = obstacleGrid.length
   let n = obstacleGrid[0].length
