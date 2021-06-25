@@ -9,6 +9,12 @@
  * @param {number[]} nums
  * @return {number[]}
  */
+
+//双指针
+//一个不减的数组，求其每一项的平方，中间项的平方一定是更小的
+//采用双指针从数组两侧开始查找比较，将更大的数逆序存入新的数组，
+//新数组也是不减排序的
+
 var sortedSquares = function (nums) {
   let left = 0
   let right = nums.length - 1
