@@ -9,6 +9,9 @@
  * @param {string} s
  * @return {number}
  */
+
+//罗马数字存在这样的规律
+//如果当前的符号代表的数字，小于右边符号代表的数字，那么当前的符号代表的数字就应该被减去
 var romanToInt = function (s) {
   let symbolValues = {
     "I": 1,
