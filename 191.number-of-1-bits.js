@@ -9,6 +9,8 @@
  * @param {number} n - a positive integer
  * @return {number}
  */
+
+//Brian Kernighan 算法，n = n & (n - 1) 可以去掉二进制数的最末位的 1
 var hammingWeight = function (n) {
   let ans = 0
   while (n) {
