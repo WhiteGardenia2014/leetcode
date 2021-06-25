@@ -12,6 +12,14 @@
  * @param {number} n
  * @return {void} Do not return anything, modify nums1 in-place instead.
  */
+
+//双指针
+//注意是原地算法，需要直接改变m数组中的值
+//两个指针指向m，n的数字末位，index索引指向 m 的最后一位
+//比较两个指针的数字，将更大的数字，放到 index 索引的位置
+//注意如果有哪个指针遍历完了数字 ( i 或 j == -1 )，
+//就将没有遍历完的数组填充进来
+
 var merge = function (nums1, m, nums2, n) {
   let i = m - 1
   let j = n - 1
