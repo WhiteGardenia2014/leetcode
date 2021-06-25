@@ -9,6 +9,10 @@
  * @param {number[]} nums
  * @return {number}
  */
+
+//***** 动态规划
+
+//贪心算法
 var maxSubArray = function (nums) {
   let max = -1000000
   let count = 0
