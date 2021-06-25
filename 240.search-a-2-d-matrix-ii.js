@@ -10,6 +10,14 @@
  * @param {number} target
  * @return {boolean}
  */
+
+//可以基于 74 题的解法
+//缩减空间法、双指针
+//利用双指针从矩阵的左下角开始检索矩阵，
+//如果当前元素大于target，说明这一行所有元素都大于target，因此行数减 1，查找上一行
+//如果当前元素小于target，说明这一行有可能存在target，因此列数加 1，继续查找当前行
+//***** 也有二分搜索的方法，递归的方法等
+
 var searchMatrix = function (matrix, target) {
   let n = matrix.length
   let m = matrix[0].length
