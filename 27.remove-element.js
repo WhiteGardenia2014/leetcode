@@ -10,6 +10,9 @@
  * @param {number} val
  * @return {number}
  */
+
+//双指针
+//如果右指针指向的数字不是目标值，就赋值给左指针，并使左指针指向下一个位置
 var removeElement = function (nums, val) {
   let slowIndex = 0
   for (let fastIndex = 0; fastIndex < nums.length; fastIndex++) {
