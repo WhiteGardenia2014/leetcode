@@ -9,6 +9,8 @@
  * @param {number} numRows
  * @return {number[][]}
  */
+
+//动态规划
 var generate = function (numRows) {
   let ans = [
     [1]
