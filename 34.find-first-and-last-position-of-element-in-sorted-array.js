@@ -10,6 +10,9 @@
  * @param {number} target
  * @return {number[]}
  */
+
+//二分法
+//分别寻找左端索引和右端索引
 var searchRange = function (nums, target) {
   if (nums.length == 0) {
     return [-1, -1]
@@ -19,6 +22,9 @@ var searchRange = function (nums, target) {
   return [leftIndex, rightIndex]
 };
 
+//寻找左端索引
+//如果middle = target 并不直接返回，而令 right = middle -1 
+//退出循环后要判断 如果 left < length 且 left == target，则left为左端索引
 function searchLeftRange(nums, target) {
   let left = 0
   let right = nums.length - 1
@@ -38,6 +44,9 @@ function searchLeftRange(nums, target) {
   return left
 }
 
+//寻找右端索引
+//如果middle = target ，令left = middle + 1
+//退出循环后要判断 如果 right >= 0 且 right = target ，则right为右端索引
 function searchRightRange(nums, target) {
   let left = 0
   let right = nums.length - 1
