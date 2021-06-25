@@ -24,7 +24,7 @@
   return ans
 };*/
 
-//进阶算法 计算包含的5的倍数的数量
+//进阶算法 计算包含的5的倍数的数量，其中如果遇到5的幂，需要重复计算
 var trailingZeroes = function (n) {
   n = n - n % 5
   let zeros = 0
