@@ -13,6 +13,10 @@
 
 //Set集合
 var intersection = function (nums1, nums2) {
+  //为了减少 Set 集合占用的空间，因此先遍历更短的数组
+  if (nums1.length > nums2.length) {
+    [nums1, nums2] = [nums2, nums1]
+  }
   //为两个数组建立两个集合
   let num1Set = new Set()
   let num2Set = new Set()
@@ -32,4 +36,4 @@ var intersection = function (nums1, nums2) {
 };
 // @lc code=end
 
-console.log(intersection([1, 2, 2, 1], [2, 2]));
+console.log(intersection([1, 2, 2, 1], [2, 2, 4, 5, 6]));
