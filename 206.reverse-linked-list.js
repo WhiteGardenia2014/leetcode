@@ -22,7 +22,7 @@
 var reverseList = function (head) {
   //如果 head 是空链表，或者 head 只有一个节点，直接返回 head
   //要注意，如果 head 是 null，是不能访问 next 属性的
-  //也可以使用 ?. 可选链 来访问 null 的属性
+  //也可以使用 ?. 可选链 来访问 null 的属性（目前还是试验功能）
   //如写成 !(head?.next) 或 head?.next === undefined
   if ((!head) || !(head.next)) {
     return head
