@@ -39,9 +39,25 @@ var reverseList = function (head) {
   } //循环结束后，current 和 temp 都指向 null，pre指向最后一个节点，也就是新的 head 节点
   return pre
 };
+
+//递归实现反转链表
+var reverseList = function (head) {
+  return reverse(null, head)
+}
+
+function reverse(pre, current) {
+  if (!current) {
+    return pre
+  }
+  let temp = current.next
+  current.next = pre
+  pre = current
+  return reverse(pre, temp)
+}
+
+
 // @lc code=end
 
-console.log(reverseList({}));
 
 let head = {
   val: 1,
@@ -53,3 +69,6 @@ let head = {
     }
   }
 }
+console.log(reverseList(
+  head
+));
