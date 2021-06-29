@@ -39,6 +39,7 @@ MyLinkedList.prototype.getNode = function (index) {
 };
 
 // get 方法，根据节点的索引值，获取对应节点的 value，如果索引值无效，返回 -1
+// 如果索引值无效，返回 -1 的处理并不好，更好的选择是返回 undefined
 /**
  * Get the value of the index-th node in the linked list. If the index is invalid, return -1. 
  * @param {number} index
