@@ -20,7 +20,7 @@
 
 //哈希表、快慢指针法
 //哈希表，每遇到一个节点，就存入 Set 集合，如果某个节点在 Set 中，说明遇到了环，这个节点就是环的入口
-/*var detectCycle = function (head) {
+var detectCycle = function (head) {
   let temp = head
   if (!temp) { //如果链表为空，返回 null
     return null
@@ -34,7 +34,7 @@
     temp = temp.next // temp 指向下一个节点
   }
   return null
-};*/
+};
 
 //快慢指针法
 //快指针每次向前移动两步，慢指针每次向前移动一步，
