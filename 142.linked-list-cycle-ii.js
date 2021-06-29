@@ -46,7 +46,7 @@ var detectCycle = function (head) {
 //两个指针依次前进，它们相遇的位置就是环的入口
 var detectCycle = function (head) {
   let temp = head
-  //如果链表为空，返回 false，如果快指针、慢指针有一个为 null，返回 null
+  //如果链表为空，返回 null，如果快指针、慢指针有一个为 null，返回 null
   //利用逻辑运算的短路特性，如果 temp 为 null，则 !temp 为 1，因此不会再运算 temp.next
   //防止因访问 null 的属性而报错
   if ((!temp) || (!temp.next) || (!temp.next.next)) {
