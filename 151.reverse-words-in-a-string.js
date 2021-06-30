@@ -9,6 +9,12 @@
  * @param {string} s
  * @return {string}
  */
+
+//可以通过正则匹配，去掉单词之间多余的空格
+var reverseWords = function (s) {
+  return s.trim().split(/\s+/).reverse().join(' ');
+}
+
 var reverseWords = function (s) {
   s = removeExtraSpaces(s)
   return s.split(" ").reverse().join(" ")
