@@ -41,6 +41,60 @@ var isIsomorphic = function (s, t) {
   }
   return true
 };
+
+
+//第二种解法
+var isIsomorphic = function (s, t) {
+  var map1 = {}
+  var map2 = {}
+
+  for (var i = 0; i < s.length; i++) {
+    var a = s[i]
+    var b = t[i]
+
+    if (a in map1) { // 如果 s 中的字符已经遇到过，则其应该有对应的字符
+      if (map1[a] !== b) { // t 里就必须是 s 中该字符对应的符号
+        return false
+      }
+    } else { // 如果是新出现的字符
+      map1[a] = b // 建立映射
+      if (b in map2) { // 如果对应到 t 里的字符不是新出现的字符，则肯定不匹配
+        return false
+      } else {
+        map2[b] = a // 如果 t 里也是新的字符，则记录下这个映射
+      }
+    }
+  }
+
+  return true
+};
+
+
+//第三种解法，模式串解法
+var isIsomorphic = function (s, t) {
+  return unify(s) === unify(t)
+}
+
+function unify(str) {
+  var pattern = ''
+  var map = {}
+
+  var patternCharCode = 65
+
+  for (var i = 0; i < str.length; i++) {
+    var c = str[i]
+    if (c in map) {
+      pattern += map[c]
+    } else {
+      var patternChar = String.fromCharCode(patternCharCode++)
+      map[c] = patternChar
+      pattern += map[c]
+    }
+  }
+  return pattern
+}
+
+
 // @lc code=end
 
-console.log(isIsomorphic("paper", "title"));
+console.log(isIsomorphic("papers", "titlee"));
