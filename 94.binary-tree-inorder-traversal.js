@@ -43,7 +43,7 @@ var inorderTraversal = function (root) {
 //如果从栈中取出的是 null 标记，说明其前一个节点需要被记录，记录下该节点，结束这一次循环
 //依次往复，直到栈中已经没有节点
 
-var preorderTraversal = function (root) {
+var inorderTraversal = function (root) {
   let res = []
   let stack = []
   if (root) { //如果根节点不为 null，就把根节点存入到栈中
