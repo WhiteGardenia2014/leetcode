@@ -29,7 +29,7 @@ var inorderTraversal = function (root) {
       return
     }
     dfs(root.left) //先遍历左子树
-    ans.push(root.val) //再遍历中节点
+    ans.push(root.val) //再记录中节点的值
     dfs(root.right) //再遍历右子树
   }
 };
