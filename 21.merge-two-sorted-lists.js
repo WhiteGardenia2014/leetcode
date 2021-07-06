@@ -32,6 +32,7 @@ var mergeTwoLists = function (l1, l2) {
     }
     current = current.next
   };
+  // current.next = l1 || l2
   if (l1) { //如果 l1 不为空，就将 l1 剩余部分添加到结果链表中
     current.next = l1
   } else {
@@ -45,6 +46,9 @@ var mergeTwoLists = function (l1, l2) {
 //取出当前最小节点，并使当前最小节点指向剩余部分的最小节点，最后返回当前最小节点
 //对于剩余部分的最小节点，求取方法由递归给出
 var mergeTwoLists = function (l1, l2) {
+  // if (!l1 || !l2) {
+  //   return l1 || l2
+  // }
   if (!l1) { //如果 l1 为 null，直接返回 l2
     return l2
   } //如果 l2 为 null，直接返回 l1
