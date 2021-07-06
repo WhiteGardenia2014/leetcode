@@ -37,4 +37,28 @@ var removeNthFromEnd = function (head, n) {
   slow.next = slow.next.next //删除 slow 指针节点的后面一个节点
   return temp.next
 };
+
+
+//递归写法
+var removeNthFromEnd = function (head, n) {
+  let c = 0
+  let prehead = new ListNode(0, head)
+  remove(prehead, n)
+  return prehead.next
+
+  //通过递归函数，首先深入到链表最末端的 null，再逐层返回
+  //在逐层返回的过程中，每返回一层给 c 加 1
+  //当 c == n + 1 时，说明这一层的 head 指向的是 要移除的节点的 前一个结点，将后面的节点删除即可
+  //由于函数的要求是删除一个节点，因此对于递归函数的返回值，只需要考虑在最外层，将 head 返回即可
+  function remove(head, n) {
+    if (head) {
+      remove(head.next, n)
+      c++
+      if (c == n + 1) {
+        head.next = head.next.next
+      }
+    }
+    return head
+  }
+}
 // @lc code=end
