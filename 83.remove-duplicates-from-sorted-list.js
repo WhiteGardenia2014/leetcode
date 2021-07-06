@@ -33,4 +33,17 @@ var deleteDuplicates = function (head) {
   }
   return head
 };
+
+//递归写法
+var deleteDuplicates = function (head) {
+  if (!head || !head.next) {
+    return head
+  }
+  if (head.val == head.next.val) {
+    return deleteDuplicates(head.next)
+  } else {
+    head.next = deleteDuplicates(head.next)
+    return head
+  }
+}
 // @lc code=end
