@@ -56,6 +56,21 @@ function reverse(pre, current) {
 }
 
 
+//另一种递归的写法
+//先深入到链表的末尾，找到链表的新头节点，并通过递归传递回来
+//在递归返回的过程中，不断翻转其中链表节点的指向
+//最终返回了链表的新头节点，并将链表的指向翻转了
+var reverseList = function (head) {
+  if (!head || !head.next) {
+    return head
+  }
+  let tail = head.next
+  head.next = null
+  let newHead = reverseList(tail)
+  tail.next = head
+  return newHead
+}
+
 // @lc code=end
 
 
