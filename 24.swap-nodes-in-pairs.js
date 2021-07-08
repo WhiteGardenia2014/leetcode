@@ -32,4 +32,16 @@ var swapPairs = function (head) {
   }
   return temp.next
 };
+
+
+//递归写法
+var swapPairs = function (head) {
+  if (!head || !head.next) {
+    return head
+  }
+  let tail = head.next
+  head.next = swapPairs(tail.next)
+  tail.next = head
+  return tail
+}
 // @lc code=end
