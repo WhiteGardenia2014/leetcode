@@ -17,6 +17,8 @@
  * @param {TreeNode} root
  * @return {number[][]}
  */
+
+//层序遍历，迭代写法
 var levelOrder = function (root) {
   if (!root) {
     return []
@@ -38,5 +40,26 @@ var levelOrder = function (root) {
     res.push(curLevel) //把当前层节点值的数组记录到结果中
   }
   return res
+};
+
+
+//递归写法
+//对于第 i 层的节点值，要保存在 i 下标的子数组中，对于同一层的节点值，保证记录顺序从左到右
+var levelOrder = function (root) {
+  let res = [];
+  defs(root, 0);
+  return res;
+
+  function defs(root, i) {
+    if (!root) {
+      return;
+    }
+    if (!res[i]) { //如果记录第 i 层的数组还不存在，就创建一个空数组，用来记录第 i 层的节点值
+      res[i] = [];
+    }
+    res[i].push(root.val)
+    root.left && defs(root.left, i + 1);
+    root.right && defs(root.right, i + 1);
+  }
 };
 // @lc code=end
