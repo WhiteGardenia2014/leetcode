@@ -18,7 +18,7 @@
  * @return {number}
  */
 
-//递归写法
+//递归写法、后序遍历
 var minDepth = function (root) {
   if (!root) { //如果是空节点，返回 0
     return 0
