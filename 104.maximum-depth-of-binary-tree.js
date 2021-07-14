@@ -18,7 +18,7 @@
  * @return {number}
  */
 
-//递归写法
+//递归写法、后序遍历
 var maxDepth = function (root) {
   if (!root) {
     return 0
