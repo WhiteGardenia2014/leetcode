@@ -70,4 +70,39 @@ var inorderTraversal = function (root) {
   }
   return res
 }
+
+
+//递归方法另一种写法，拼接数组
+var inorderTraversal = function (root) {
+  if (root) {
+    return inorderTraversal(root.left).concat(root.val).concat(inorderTraversal(root.right))
+  }
+  return []
+}
+
+
+//迭代方法另一种写法
+//指针优先前进到左侧最深的节点，并把经过的节点记录到栈中
+//每次从栈中弹出一个节点，记录下它的值，并把指针指向它的右节点，
+//如果右节点存在，下一次循环会记录到栈中，指针每次会优先前进到它左子树的最深节点
+//对于中序遍历，在节点出栈的时候记录它，对于前序遍历，在节点进栈的时候记录它
+var inorderTraversal = function (root) {
+  let result = []
+  let stack = []
+  let p = root
+  while (true) {
+    while (p) {
+      stack.push(p)
+      p = p.left
+    }
+    if (!stack.length) {
+      break
+    }
+    let node = stack.pop()
+    result.push(node.val)
+    p = node.right
+  }
+  return result
+}
+
 // @lc code=end
