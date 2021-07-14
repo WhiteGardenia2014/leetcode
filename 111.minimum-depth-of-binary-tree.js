@@ -43,7 +43,7 @@ var minDepth = function (root) {
 //层序遍历迭代写法
 var minDepth = function (root) {
   if (!root) {
-    return []
+    return 0
   }
   let depth = 0
   let queue = [] //记录每一层节点值的队列
@@ -53,13 +53,40 @@ var minDepth = function (root) {
     depth++
     for (let i = 0; i < length; i++) {
       let node = queue.shift() //每次从 queue 中取出一个节点
-      if (!node.left && !node.right) {
+      if (!node.left && !node.right) { //如果 node 是叶子节点，就直接返回它的深度，即为最小深度
         return depth
       }
       //把当前层的子节点按顺序放入 queue 中
       node.left && queue.push(node.left)
       node.right && queue.push(node.right)
     }
+  }
+}
+
+
+//前序遍历递归写法，高阶函数
+var minDepth = function (root) {
+  if (!root) {
+    return 0
+  }
+  let min = Infinity
+  traversal(root, (node, d) => { //前序遍历树的节点
+    //如果 node 节点是叶子节点，就记录下它的深度，并更新最小深度
+    if (!node.left && !node.right) {
+      if (d < min) {
+        min = d
+      }
+    }
+  })
+  return min
+}
+
+//先序遍历高阶函数，depth 为节点的深度
+function traversal(root, action, depth = 1) {
+  if (root) {
+    action(root, depth)
+    traversal(root.left, action, depth + 1)
+    traversal(root.right, action, depth + 1)
   }
 }
 // @lc code=end
