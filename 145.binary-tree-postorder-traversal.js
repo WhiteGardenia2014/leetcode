@@ -70,4 +70,12 @@ var postorderTraversal = function (root) {
   return res
 }
 
+
+//递归方法另一种写法，拼接数组
+var postorderTraversal = function (root) {
+  if (root) {
+    return postorderTraversal(root.left).concat(postorderTraversal(root.right)).concat(root.val)
+  }
+  return []
+}
 // @lc code=end
