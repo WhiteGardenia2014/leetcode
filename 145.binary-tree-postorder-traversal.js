@@ -78,4 +78,27 @@ var postorderTraversal = function (root) {
   }
   return []
 }
+
+//迭代方法另一种写法
+//改写前序遍历的迭代方法，将遍历顺序改为，中右左，
+//对得到的结果逆序，就是后序遍历的结果
+//因此 p 指针要优先进入到右侧的子树最底层
+var postorderTraversal = function (root) {
+  let result = []
+  let stack = []
+  let p = root
+  while (true) {
+    while (p) {
+      result.push(p.val)
+      stack.push(p)
+      p = p.right
+    }
+    if (!stack.length) {
+      break
+    }
+    let node = stack.pop()
+    p = node.left
+  }
+  return result.reverse()
+}
 // @lc code=end
