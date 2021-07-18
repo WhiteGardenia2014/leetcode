@@ -24,7 +24,7 @@ var levelOrder = function (root) {
     return []
   }
   let res = []
-  let queue = [] //记录每一层节点值的队列
+  let queue = [] //记录每一层节点的队列
   queue.push(root)
   while (queue.length) {
     //记录当前层的节点数
