@@ -25,11 +25,8 @@ var connect = function (root) {
   if (!root) { //如果没有节点，返回 null
     return null
   }
-  if (!root.left && !root.right) { //如果只有一个节点，返回 root
-    return root
-  }
-  //将第二层节点放入节点数组
-  let queue = [root.left, root.right]
+  //将 root 节点放入节点数组
+  let queue = [root]
   while (queue.length) {
     //记录当前层节点的数量
     let length = queue.length
@@ -55,7 +52,7 @@ var connect = function (root) {
 };
 
 
-//层序遍历解法，不使用节点数组，空间复杂度 O(1)
+//层序遍历解法，不使用节点数组，使用已经建立的 next 指针，空间复杂度 O(1)
 var connect = function (root) {
   if (!root) { //如果没有节点，返回 null
     return null
