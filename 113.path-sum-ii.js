@@ -31,7 +31,7 @@ var pathSum = function (root, targetSum) {
     array.push(root.val) //每次遇到一个节点，就把节点值放入数组中
     //如果遇到的是叶子节点，判断节点值是否等于目标值
     if (!root.left && !root.right) {
-      //如果节点值等于目标值，把数组记录在 result 中，主要记录的是 array 的副本，而不要直接保存引用
+      //如果节点值等于目标值，把数组记录在 result 中，注意记录的是 array 的副本，而不要直接保存引用
       if (root.val === targetSum) {
         result.push(array.slice())
       } else { //如果节点值不等于目标值，回退到上一个节点
