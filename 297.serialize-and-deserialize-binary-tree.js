@@ -51,6 +51,14 @@ var serialize = function (root) {
   }
 };
 
+//JSON方法
+/*
+var serialize = function (root) {
+    return JSON.stringify(root)
+  }
+*/
+
+
 /**
  * Decodes your encoded data to tree.
  *
@@ -100,6 +108,19 @@ var deserialize = function (data) {
     return root
   }
 };
+
+//JSON方法
+//JSON.parse()将返回一个朴素对象，应该将其转换为 TreeNode 对象
+/*
+var deserialize = function (data) {
+  return JSON.parse(data, function (k, v) {
+    if (v && typeof v == "object") {
+      return new TreeNode(v.val, v.left, v.right)
+    }
+    return v
+  })
+}
+*/
 
 /**
  * Your functions will be called as such:
